@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Ethics Dilemma</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            color: #38bdf8; 
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #b3b3b3;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #38bdf8;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 440px; 
+            perspective: 1000px; 
+            cursor: pointer;
+            transition: transform 0.3s ease; 
+        }
+        @media (hover: hover) {
+            .flip-card:hover {
+                transform: translateY(-8px);
+            }
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            padding: 30px; 
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            overflow-y: auto; 
+        }
+
+        .flip-card-front::-webkit-scrollbar, .flip-card-back::-webkit-scrollbar {
+            display: none;
+        }
+
+        .flip-card-front {
+            background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+            border: 1px solid #333;
+            transition: border-color 0.3s;
+        }
+
+        @media (hover: hover) {
+            .flip-card:hover .flip-card-front {
+                border-color: #38bdf8;
+            }
+        }
+
+        .flip-card-front h2 {
+            font-size: 1.4rem; 
+            color: #38bdf8; 
+            margin: 15px 0 10px 0;
+        }
+
+        .flip-card-front p {
+            font-size: 0.95rem;
+            color: #ccc;
+            line-height: 1.5;
+            margin: 0;
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 3.5rem; 
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+
+        .flip-card-back {
+            background: linear-gradient(145deg, #0f382e, #1a4d40); 
+            color: #e0e0e0;
+            transform: rotateY(180deg);
+            border: 1px solid #64ffda;
+        }
+
+        .flip-card-back h3 {
+            color: #64ffda;
+            margin-top: 0;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .flip-card-back p {
+            font-size: 0.95rem; 
+            line-height: 1.5;
+            text-align: left;
+            margin-bottom: 12px;
+        }
+
+        .bad-choice .flip-card-back {
+            background: linear-gradient(145deg, #4a1515, #631d1d); 
+            border: 1px solid #ff5252;
+        }
+        .bad-choice .flip-card-back h3 {
+            color: #ff5252;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>AI Ethics Dilemma</h1>
+        <p><strong>The Situation:</strong> "I was given a task, but I used AI. I didn't notice how the AI deleted the entire database."<br><br>
+        <em>Click on PC or Tap on mobile to flip the cards and lock them to read the consequences.</em></p>
+    </div>
+
+    <div class="card-grid">
+        
+        <div class="flip-card bad-choice" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div class="icon">🙈</div>
+                    <h2>Hide the Mistake & Conceal Failure</h2>
+                    <p>Attempt to keep the critical incident entirely secret from management. Act as if everything is functioning normally and hope the system somehow auto-recovers or nobody runs a query anytime soon.</p>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Ethical Failure</h3>
+                    <p><strong>Violates ACM Code 1.3:</strong> Professionals must be honest and trustworthy.</p>
+                    <p><strong>Consequence:</strong> Delayed data recovery leads to massive financial losses. When discovered, this will result in termination.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card bad-choice" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div class="icon">🤖</div>
+                    <h2>Deflect Fault & Blame the AI</h2>
+                    <p>Shift all professional responsibility to the neural network. Inform your supervisor that the automation tool is solely malfunctioning and refuse to acknowledge your own lack of strict oversight.</p>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Lack of Accountability</h3>
+                    <p><strong>Violates ACM Code 2.5:</strong> Professionals should accept accountability for their actions.</p>
+                    <p><strong>Consequence:</strong> AI is merely a tool. Shifting the blame shows a lack of professional responsibility and technical understanding.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card bad-choice" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div class="icon">🕵️‍♂️</div>
+                    <h2>Attempt Unauthorized Secret Fixes</h2>
+                    <p>Try to independently restore the database under intense panic. Copy-paste unverified, complex recovery scripts from StackOverflow or forums without consulting database administrators or team leads.</p>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Risk Escalation</h3>
+                    <p><strong>Unprofessional Action:</strong> Acting without authorization during a crisis.</p>
+                    <p><strong>Consequence:</strong> Unverified scripts can corrupt the remaining data or overwrite existing backups, making recovery completely impossible.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div class="icon">👥</div>
+                    <h2>Consult a Senior Developer First</h2>
+                    <p>Immediately approach an experienced team member in private. Request an urgent, professional technical assessment of the exact damage to understand if a quick backup restoration is possible.</p>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Team Collaboration</h3>
+                    <p><strong>Professional Assessment:</strong> Gathering facts before escalating the issue.</p>
+                    <p><strong>Consequence:</strong> A senior can quickly check if there are automatic backups or snapshots, allowing you to report the problem to the boss along with a ready solution.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div class="icon">📢</div>
+                    <h2>Report & Admit Fault Immediately</h2>
+                    <p>Directly contact your supervisor and the DevOps team. Provide a completely transparent explanation of your actions, the prompt used, and the absolute scale of the data loss without delay.</p>
+                </div>
+                <div class="flip-card-back">
+                    <h3>The Right Choice</h3>
+                    <p><strong>Transparency:</strong> Explaining what happened aligns with professional integrity.</p>
+                    <p><strong>Consequence:</strong> Allows the IT team to immediately attempt database recovery from backups, mitigating the overall damage.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div class="icon">🛡️</div>
+                    <h2>Propose Strict Preventive Measures</h2>
+                    <p>Formulate a comprehensive plan to eliminate such risks in the future. Suggest implementing sandboxed environments, mandatory human-in-the-loop validation, and restricted database write permissions.</p>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Learn & Adapt</h3>
+                    <p><strong>Russian AI Ethics Code Art. 4:</strong> Emphasizes risk assessment and responsible AI usage.</p>
+                    <p><strong>Consequence:</strong> Implementing strict controls, like sandbox environments, prevents this from happening again.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
