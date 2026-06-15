@@ -47,4 +47,4 @@ The consequences and feedbacks modeled in this application strictly align with:
 ## 🚀 How to Run Locally
 1. Clone the repository:
 ```bash
-   git clone [https://github.com/YOUR-GITHUB-USERNAME/YOUR-REPO-NAME.git](https://github.com/YOUR-GITHUB-USERNAME/YOUR-REPO-NAME.git)
+[[   git clone [https://github.com/YOUR-GITHUB-USERNAME/YOUR-REPO-NAME.git](https://github.com/YOUR-GITHUB-USERNAME/YOUR-REPO-NAME.git)](https://daniil-svetlov.github.io/Ethics-Dilemma/)](https://daniil-svetlov.github.io/Ethics-Dilemma/)
